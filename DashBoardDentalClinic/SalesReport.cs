@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DashBoardDentalClinic
 {
@@ -20,6 +21,9 @@ namespace DashBoardDentalClinic
         {
             InitializeComponent();
             this.MaximizeBox = false;
+            // Set up the ProgressBar
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 100;
         }
 
         private void SalesReport_Load(object sender, EventArgs e)
@@ -37,6 +41,17 @@ namespace DashBoardDentalClinic
             Form1 mainfoForm = new Form1();
             mainfoForm.Show();
             this.Hide();
+        }
+
+        private void SalesReport_Paint(object sender, PaintEventArgs e)
+        {
+            DrawCircularProgressBar(e.Graphics, progressBar1.Value, progressBar1.Minimum, progressBar1.Maximum,
+                new Point(progressBar1.Location.X + progressBar1.Width / 2, progressBar1.Location.Y + progressBar1.Height / 2),
+                progressBar1.Width / 2 - 5);
+        }
+        private void progressBar1_ValueChanged(object sender, EventArgs e)
+        {
+            Invalidate(); // Trigger a redraw when value changes
         }
     }
 }

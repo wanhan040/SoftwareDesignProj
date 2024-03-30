@@ -28,25 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.SuspendLayout();
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(54, 35);
-            this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(616, 370);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // linkLabel1
             // 
@@ -59,25 +43,37 @@
             this.linkLabel1.Text = "Go Back";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // guna2CircleProgressBar1
+            // 
+            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(405, 137);
+            this.guna2CircleProgressBar1.Minimum = 0;
+            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(238, 238);
+            this.guna2CircleProgressBar1.TabIndex = 2;
+            this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
+            // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 634);
+            this.Controls.Add(this.guna2CircleProgressBar1);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.chart1);
             this.Name = "SalesReport";
             this.Text = "SalesReport";
             this.Load += new System.EventHandler(this.SalesReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SalesReport_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
     }
 }
