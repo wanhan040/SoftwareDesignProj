@@ -16,7 +16,7 @@ namespace DashBoardDentalClinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PatientInfo());
+            Application.Run(new Form1());
         }
     }
 }
