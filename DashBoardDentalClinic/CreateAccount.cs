@@ -37,7 +37,7 @@ namespace DashBoardDentalClinic
         private void createButton_Click(object sender, EventArgs e)
         {
             // Check if any required fields are empty
-            if (string.IsNullOrEmpty(usernameTextbox2.Text) || string.IsNullOrEmpty(passTextbox2.Text) || string.IsNullOrEmpty(acctypeTextbox.Text))
+            if (string.IsNullOrEmpty(usernameTextbox2.Text) || string.IsNullOrEmpty(passTextbox2.Text) || string.IsNullOrEmpty(acctypeComboBox.Text))
             {
                 MessageBox.Show("Please fill in all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -65,7 +65,7 @@ namespace DashBoardDentalClinic
                     // Add parameters to the query
                     cmd.Parameters.AddWithValue("@Username", usernameTextbox2.Text);
                     cmd.Parameters.AddWithValue("@Password", passTextbox2.Text);
-                    cmd.Parameters.AddWithValue("@AccountType", acctypeTextbox.Text);
+                    cmd.Parameters.AddWithValue("@AccountType", acctypeComboBox.Text);
 
                     // Execute the query
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -78,7 +78,7 @@ namespace DashBoardDentalClinic
                         usernameTextbox2.Text = "";
                         passTextbox2.Text = "";
                         confirmpassTextbox.Text = "";
-                        acctypeTextbox.Text = "";
+                        acctypeComboBox.SelectedIndex = -1;
                     }
                     else
                     {

@@ -119,22 +119,28 @@ namespace DashBoardDentalClinic
                     // Check if the query was successful
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Account created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Patient registered successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         // Clear the input fields
                         guna2TextBox1.Text = "";
                         guna2TextBox2.Text = "";
                         guna2TextBox3.Text = "";
                         guna2TextBox4.Text = "";
                         listView1.Items.Clear();
+
+                        // Clear checked items in the CheckedListBox
+                        for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                        {
+                            checkedListBox1.SetItemChecked(i, false);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Failed to create account", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to register patient", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error creating account: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error registering patient: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -147,5 +153,9 @@ namespace DashBoardDentalClinic
             }
         }
 
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
